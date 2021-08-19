@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
 
         ImageView leftIcon = (ImageView) findViewById(R.id.left_icon);
         ImageView rightIcon = (ImageView) findViewById(R.id.right_icon);
+        ImageView addIcon = (ImageView) findViewById(R.id.add_icon);
         TextView tittle = (TextView) findViewById(R.id.toolbar_tittle);
 
         leftIcon.setOnClickListener(new View.OnClickListener()
@@ -39,6 +40,16 @@ public class MainActivity extends AppCompatActivity
             {
                 //Toast.makeText(MainActivity.this, "Right icon", Toast.LENGTH_SHORT).show();
                 showMenu(view);
+            }
+        });
+
+        addIcon.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent add = new Intent(MainActivity.this, Add.class);
+                startActivity(add);
             }
         });
     }
